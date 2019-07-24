@@ -9,6 +9,7 @@ function CharacterForm(props) {
     const [level, setLevel] = useState("");
     const [items, setItems] = useState("");
     const [race, setRace] = useState("");
+    
   
 
 

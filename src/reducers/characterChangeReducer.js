@@ -11,7 +11,6 @@ const characterChangeReducer = (state = initialState, action) => {
         case 'NEXT_HERO':
             return action.newSelectedHeroId;
         case 'ADD_HERO':
-            console.log(state)
             return {...state, characterById: {...state.characterById, 
                 [id]: {
                     name: name,
@@ -26,6 +25,17 @@ const characterChangeReducer = (state = initialState, action) => {
                 delete newCharacterById[id]
                 let newState = {...state, characterById: newCharacterById}
                 return newState
+
+            case 'EDIT_CHARACTER':
+                return {...state, characterById: {...state.characterById,
+                [id]: {
+                    name: name,
+                    level: level,
+                    job: job,
+                    items: items,
+                    id: id,
+                    race: race
+                }}}
         default:
             return state
     }
